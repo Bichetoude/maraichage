@@ -78,6 +78,7 @@ class Realistation(models.Model):
     action = models.ForeignKey('Action')
     type_production = models.ForeignKey('TypeProduction', blank=True, null=True)
     situation_geo = models.ForeignKey('SituationGEO', blank=True, null=True)
+    nom = models.CharField(max_length=200)
     date_min = models.DateField()
     date_max = models.DateField(blank=True, null=True)
     regularite_jour = models.IntegerField(blank=True, null=True)
@@ -85,7 +86,7 @@ class Realistation(models.Model):
     remarque = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.action
+        return self.nom
 
     class Meta:
        unique_together = ("variete", "action", "type_production", "situation_geo")
