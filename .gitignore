@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+ma_ferme_venv
+db.sqlite3
+/static
+DS_Store
